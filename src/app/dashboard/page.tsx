@@ -1,6 +1,7 @@
 "use client";
 import { useWallet } from "@/hooks/useWallet";
-import ThemeToggle from "@/ui/ThemeToggle";
+import StatsCards from "@/components/dashboard/StatsCards";
+import Chart from "@/Chart";
 
 export default function DashboardPage() {
   const { account, balance } = useWallet();
@@ -8,7 +9,8 @@ export default function DashboardPage() {
     <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow text-center">
       <p>👛 Wallet: {account || "Not connected"}</p>
       <p>💰 Balance: {balance ? `${balance} ETH` : "Loading..."}</p>
-      <ThemeToggle />
+      <StatsCards />
+      <Chart />
     </div>
   );
 }
